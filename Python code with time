@@ -1,0 +1,20 @@
+def fibonnaci_numbers(iters):
+    import time
+    
+    start_time = time.time()
+    
+    fib_calc = [0, 1]
+    fib_num_list = [0]
+    fib_num = 0
+    
+    for i in range(iters):
+        print(fib_num)
+        fib_num = fib_calc[0] + fib_calc[1]
+        fib_calc.append(fib_num)
+        fib_calc.pop(0)
+        fib_num_list.append(fib_calc[0])
+    print(f"It took %s seconds to execute the function"\
+          % (time.time() - start_time))       
+    # return fib_num_list
+
+fibonnaci_numbers(4000)
